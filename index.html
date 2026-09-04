@@ -80,7 +80,7 @@ main{min-width:0;padding:44px 0 80px}.hero{position:relative;overflow:hidden;pad
   const tags=(items)=>items.map(x=>"<span class=\"tag\">"+x+"</span>").join("");
   function card(item){
     const actions=(item.resources||[]).length? "<a class=\"resource-link\" href=\""+item.resources[1]+"\">"+item.resources[0]+"</a>":"";
-    return "<article class=\"method-card\" data-day=\""+norm((item.meta||\"\").split(\" · \" )[0])+"\" data-tags=\""+item.tags.join(" ")+"\" data-search=\""+norm(JSON.stringify(item))+"\">"+
+    return "<article class=\"method-card\" data-day=\""+norm((item.meta||"").split(" · ")[0])+"\" data-tags=\""+item.tags.join(" ")+"\" data-search=\""+norm(JSON.stringify(item))+"\">"+
       "<div class=\"card-head\"><div><div class=\"card-meta\">"+item.meta+"</div><h3>"+item.title+"</h3><p class=\"card-summary\">"+item.summary+"</p></div><button class=\"card-toggle\" aria-label=\"Раскрыть карточку\" aria-expanded=\"false\">+</button></div>"+
       "<div class=\"card-body\"><div class=\"tag-row\">"+tags(item.tags)+"</div><div class=\"card-grid\">"+
       "<div class=\"info-box accent\"><h4>Цель блока</h4><p>"+item.purpose+"</p></div>"+
